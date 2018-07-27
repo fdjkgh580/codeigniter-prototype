@@ -12,9 +12,13 @@ composer require jsnlib/codeigniter-prototype-converter
 ````
 
 # 使用方式
+### 注意事項
+- 設計網頁時，請務必在 `<head>` 中添加如 `<base href="<?=site_url()?>">` 的基本位置，確保整體網站中的超連結、媒體的基本位置，都與根目錄 index.php 同一層。
+- `site_url()` 可由 `$this->load->helper(url);` 載入，或是從 application/autoload.php 添加 `$autoload['helper'] = array('url');`。
 
 ### 建立設定檔
 application/config/prototype.php
+以下是個範例
 - `assets` 可指定複數的靜態資源，可能是 CSS、JavaScript、媒體、字形等等。如果所有的資源都包含在如 `assets` 那麼只要指定一次即可，會很方便。
 - `pages` 將 `Codeigniter` 的 `路由` 轉換成靜態 `HTML 名稱`。命名 HTML 時不使用路徑，除了在程式設計上過於繁瑣且效益不高之外，巢狀需要不斷切換上下頁，確實不利於網頁調閱。建議使用下滑線 `_` 命名，因為駝峰式寫法 `camelCase` ，若在 windows 將會不分大小寫，較不嚴僅。當值為 `null` 將使用下滑線自動命名。
 - `put` 產生的靜態 html 放在根目錄的資料夾。路徑不存在會自動建立，請注意根目錄的權限。
