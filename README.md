@@ -63,4 +63,4 @@ class Build extends CI_Controller {
 
 }
 ````
-透過網址運行以後，會在根目錄形成一份由 config/prototype.php 的 `put` 所指定的路徑。裡面即是生成的靜態 HTML。若想打包成 zip，可以指定參數 `doewnload => true`。
+透過網址運行以後，會在根目錄形成一份由 config/prototype.php 的 `put` 所指定的路徑，裡面即是生成的靜態 HTML。若想打包成 zip，可以指定參數 `doewnload => true`。
