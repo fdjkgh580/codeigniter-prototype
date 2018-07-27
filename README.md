@@ -12,6 +12,8 @@ composer require jsnlib/codeigniter-prototype-converter
 ````
 
 # 使用方式
+### View 的注意事項
+製作網頁時，請務必在 `<head>` 中添加如 `<base href="<?=site_url()?>">`的基本位置，確保你的 Codeigniter 網頁中的超連結、或是媒體的基本位置，都與根目錄 index.php 同一層。
 
 ### 建立設定檔
 application/config/prototype.php
