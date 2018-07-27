@@ -2,7 +2,10 @@
     "name": "jsnlib/codeigniter-prototype-converter",
     "type": "library",
     "require": {
-        "php": ">=7.1.0"
+        "php": ">=7.1.0",
+        "jsnlib/ao": ">=1.2.2",
+        "jsnlib/del": ">=1.1.1",
+        "sunra/php-simple-html-dom-parser": "1.5.2"
     },
     "license": "MIT",
     "autoload": {
