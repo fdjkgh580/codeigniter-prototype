@@ -8,7 +8,7 @@ Prototype Converter. Conver your php  to html.
 
 # 安裝
 ````
-composer install jsnlib/codeigniter-prototype-converter
+composer require jsnlib/codeigniter-prototype-converter
 ````
 
 # 使用方式
