@@ -1,0 +1,13 @@
+{
+    "name": "jsnlib/codeigniter-prototype-converter",
+    "type": "library",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jsnlib\\": "src"
+        }
+    }
+}
