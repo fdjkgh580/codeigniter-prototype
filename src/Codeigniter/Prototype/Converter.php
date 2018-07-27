@@ -51,6 +51,9 @@ class Converter
         // 路徑清空
         $this->cleanDir();
 
+        // 預設創建 HTML 命名
+        $this->createHtmlNameWhenNull();
+
         // 路徑創建
         $this->createDir();
 
@@ -67,6 +70,30 @@ class Converter
         }
 
         return true;
+    }
+
+    // 當值為 NULL 將預設創建 HTML 命名，使用下滑線命名。
+    public function createHtmlNameWhenNull(): bool
+    {
+        $isCreated = false;
+
+        foreach ($this->config->pages as $path => &$fileName)
+        {
+            if ($fileName !== null) continue;
+
+            if ($isCreated === false)
+            {
+                $isCreated = true;
+            }
+
+            $path = str_replace('/', "_", $path);
+            $path = str_replace('\\', "_", $path);
+            $path .= ".html";
+
+            $fileName = $path;
+        }
+
+        return $isCreated;
     }
 
     // 下載
