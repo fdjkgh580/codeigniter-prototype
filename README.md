@@ -13,7 +13,7 @@ composer require jsnlib/codeigniter-prototype-converter
 
 # 使用方式
 ### 必要的
-##### 使用 <base>
+##### 使用 `<base>`
 HTML 務必在 `<head>` 中添加 `<base href="<?=site_url()?>">` 作為基本位置，確保整體網站中的超連結、媒體的基本位置，都與根目錄 index.php 同一層。
 `site_url()` 可由 `$this->load->helper(url);` 載入，或是從 application/autoload.php 添加 `$autoload['helper'] = array('url');`。
 
