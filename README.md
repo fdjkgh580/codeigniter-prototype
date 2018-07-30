@@ -1,7 +1,6 @@
 # jsnlib/codeigniter-prototype-converter
-這是一個 Codeigniter 類別，當利用 Codeigniter 編寫網站後，可將 PHP 轉換為 HTML，這對於前端切版或是製作原型相當方便。
+這是一個 Codeigniter 類別，當利用 Codeigniter 編寫網站後，可將 PHP 轉換為 HTML，且能在沒有伺服器的環境底下運行。這非常適合用來建構 Prototype 原型，或是商務提案的演示。
 
-可以將 Codeigniter 開發的網頁，轉換成靜態 HTML 格式，在沒有伺服器的環境底下運行。這非常適合用來建構 Prototype 原型，或是商務提案的演示。
 為什要推薦使用？
 - 共同頁面例如 `<header>` `<footer>` 修改的時候，可以不必重複動作。
 - 透過 PHP 動態開發模板，可以使用 `if else` `foreach` 加快速度製作原型。
