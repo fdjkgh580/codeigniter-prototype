@@ -12,9 +12,10 @@ composer require jsnlib/codeigniter-prototype-converter
 ````
 
 # 使用方式
-### 注意事項
-- 設計網頁時，請務必在 `<head>` 中添加如 `<base href="<?=site_url()?>">` 的基本位置，確保整體網站中的超連結、媒體的基本位置，都與根目錄 index.php 同一層。
-- `site_url()` 可由 `$this->load->helper(url);` 載入，或是從 application/autoload.php 添加 `$autoload['helper'] = array('url');`。
+### 必要的
+##### 使用 <base>
+HTML 務必在 `<head>` 中添加 `<base href="<?=site_url()?>">` 作為基本位置，確保整體網站中的超連結、媒體的基本位置，都與根目錄 index.php 同一層。
+`site_url()` 可由 `$this->load->helper(url);` 載入，或是從 application/autoload.php 添加 `$autoload['helper'] = array('url');`。
 
 ### 建立設定檔
 application/config/prototype.php
@@ -35,7 +36,7 @@ $config =
     [
         'product/index' => 'product.html',
         'product/content/001' => 'product_content_001.html',
-        'product/content/002' => null, // output: product_content_002.html
+        'product/content/002' => null, // 自動轉換為 product_content_002.html
     ],
     'put' => 'static-pages'
 ];
@@ -44,21 +45,14 @@ $config =
 ### 建立控制器
 - 你可以隨意取名，例如 application/controllers/Build.php
 ````php
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Build extends CI_Controller {
-
-    function __construct()
-    {
-        parent::__construct();
-    }
 
     public function index()
     {
         $this->prototype = new \Jsnlib\Codeigniter\Prototype\Converter;
         
-        $result = $this->prototype->build([
+        $result = $this->prototype->build(
+        [
             'download' => false
         ]);
 
