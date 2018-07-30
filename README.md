@@ -9,6 +9,7 @@
 ````
 composer require jsnlib/codeigniter-prototype-converter
 ````
+建議 Codeigniter 版本為 3.1.9 以上。
 
 # 使用方式
 ### 必要的
